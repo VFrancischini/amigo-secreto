@@ -4,7 +4,7 @@ function adicionar() {
     let nomeAmigo = document.getElementById('nome-amigo').value;
     let amigosAdicionados = document.getElementById('lista-amigos');
 
-    listaDeAmigos.push = nomeAmigo;
+    listaDeAmigos.push(nomeAmigo);
 
     if (amigosAdicionados.textContent == '') {
         amigosAdicionados.textContent = nomeAmigo;
@@ -28,14 +28,17 @@ function sortear() {
     }
 }
 
-function reiniciar() {
-}
+function embaralha(listaDeAmigos) {
 
-function embaralha(lista) {
-
-    for (let indice = lista.length; indice; indice--) {
+    for (let indice = listaDeAmigos.length; indice; indice--) {
         const indiceAleatorio = Math.floor(Math.random() * indice);
 
-        [lista[indice - 1], lista[indiceAleatorio]] = [lista[indiceAleatorio], lista[indice - 1]];
+        [listaDeAmigos[indice - 1], listaDeAmigos[indiceAleatorio]] = [listaDeAmigos[indiceAleatorio], listaDeAmigos[indice - 1]];
     }
+}
+
+function reiniciar() {
+    listaDeAmigos = [];
+    document.getElementById('lista-amigos').innerHTML = '';
+    document.getElementById('lista-sorteio').innerHTML = '';
 }
