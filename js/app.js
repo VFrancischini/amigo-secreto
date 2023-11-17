@@ -21,6 +21,12 @@ function adicionar() {
 }
 
 function sortear() {
+
+    if (listaDeAmigos.length < 4) {
+        alert('Informe mais de 3 participantes!');
+        return;
+    }
+
     embaralha(listaDeAmigos);
 
     let listaSorteio = document.getElementById('lista-sorteio');
