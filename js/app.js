@@ -9,6 +9,11 @@ function adicionar() {
         return;
     }
 
+    if (listaDeAmigos.includes(nomeAmigo)) {
+        alert('Nome já adicionado, informe um sobrenome ou apelido!');
+        return;
+    }
+
     listaDeAmigos.push(nomeAmigo);
 
     if (amigosAdicionados.textContent == '') {
