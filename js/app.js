@@ -4,6 +4,11 @@ function adicionar() {
     let nomeAmigo = document.getElementById('nome-amigo').value;
     let amigosAdicionados = document.getElementById('lista-amigos');
 
+    if (nomeAmigo == '') {
+        alert('Informe um nome!');
+        return;
+    }
+
     listaDeAmigos.push(nomeAmigo);
 
     if (amigosAdicionados.textContent == '') {
@@ -11,6 +16,8 @@ function adicionar() {
     } else {
         amigosAdicionados.textContent += ', ' + nomeAmigo;
     }
+
+    document.getElementById('nome-amigo').value = '';
 }
 
 function sortear() {
@@ -39,6 +46,8 @@ function embaralha(listaDeAmigos) {
 
 function reiniciar() {
     listaDeAmigos = [];
+
+    document.getElementById('nome-amigo').value = '';
     document.getElementById('lista-amigos').innerHTML = '';
     document.getElementById('lista-sorteio').innerHTML = '';
 }
